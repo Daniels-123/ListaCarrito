@@ -41,10 +41,19 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/dateAddedDet"
+                android:id="@+id/quantityImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/quantityDet"
+                android:text="Imagen"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/dateAddedDet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/quantityImage"
                 android:text="Date:"
                 android:textSize="14sp"
                 android:textStyle="italic" />

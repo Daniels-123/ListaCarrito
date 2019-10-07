@@ -40,11 +40,19 @@
                 android:layout_marginTop="15dp"
                 android:hint="@string/quantity_hint" />
 
+            <EditText
+                android:id="@+id/groceryImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/groceryQty"
+                android:layout_marginTop="15dp"
+                android:hint="imagen" />
+
             <Button
                 android:id="@+id/saveButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/groceryQty"
+                android:layout_below="@id/groceryImage"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 android:text="@string/save_title"

@@ -34,6 +34,7 @@ public class ListActivity extends AppCompatActivity {
 
     private EditText groceryItem;
     private EditText quantity;
+    private EditText imagegro;
     private Button saveButton;
 
 
@@ -74,6 +75,7 @@ public class ListActivity extends AppCompatActivity {
             grocery.setQuantity("Qty: " + c.getQuantity());
             grocery.setId(c.getId());
             grocery.setDateItemAdded("Added on: " + c.getDateItemAdded());
+            grocery.setImagen("la imagen es"+ c.getImagen());
 
 
             listItems.add(grocery);
@@ -90,6 +92,7 @@ public class ListActivity extends AppCompatActivity {
         dialogBuilder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.popup, null);
         groceryItem = (EditText) view.findViewById(R.id.groceryItem);
+        imagegro = view.findViewById(R.id.groceryImage);
         quantity = (EditText) view.findViewById(R.id.groceryQty);
         saveButton = (Button) view.findViewById(R.id.saveButton);
 
@@ -114,9 +117,11 @@ public class ListActivity extends AppCompatActivity {
 
         String newGrocery = groceryItem.getText().toString();
         String newGroceryQuantity = quantity.getText().toString();
+        String newGroceryImage = imagegro.getText().toString();
 
         grocery.setName(newGrocery);
         grocery.setQuantity(newGroceryQuantity);
+        grocery.setImagen(newGroceryImage);
 
         //Save to DB
         db.addGrocery(grocery);

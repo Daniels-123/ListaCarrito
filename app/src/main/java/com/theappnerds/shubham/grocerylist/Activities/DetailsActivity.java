@@ -10,6 +10,7 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView itemName;
     private TextView quantity;
     private TextView dateAdded;
+    private TextView imageName;
     private int groceryId;
 
     @Override
@@ -20,13 +21,14 @@ public class DetailsActivity extends AppCompatActivity {
         itemName = (TextView) findViewById(R.id.itemNameDet);
         quantity = (TextView) findViewById(R.id.quantityDet);
         dateAdded = (TextView) findViewById(R.id.dateAddedDet);
-
+        imageName = findViewById(R.id.quantityImage);
 
         Bundle bundle = getIntent().getExtras();
 
         if ( bundle != null ) {
             itemName.setText(bundle.getString("name"));
             quantity.setText(bundle.getString("quantity"));
+            imageName.setText(bundle.getString("imagen"));
             dateAdded.setText(bundle.getString("date"));
             groceryId = bundle.getInt("id");
         }

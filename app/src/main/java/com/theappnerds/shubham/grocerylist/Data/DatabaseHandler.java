@@ -28,6 +28,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String CREATE_GROCERY_TABLE = "CREATE TABLE " + Constants.TABLE_NAME + "("
                 + Constants.KEY_ID + " INTEGER PRIMARY KEY," + Constants.KEY_GROCERY_ITEM + " TEXT,"
                 + Constants.KEY_QTY_NUMBER + " TEXT,"
+                + Constants.KEY_IMAGEN+ " TEXT,"
                 + Constants.KEY_DATE_NAME + " LONG);";
 
         db.execSQL(CREATE_GROCERY_TABLE);
@@ -55,6 +56,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(Constants.KEY_GROCERY_ITEM, grocery.getName());
         values.put(Constants.KEY_QTY_NUMBER, grocery.getQuantity());
+        values.put(Constants.KEY_IMAGEN, grocery.getQuantity());
         values.put(Constants.KEY_DATE_NAME, java.lang.System.currentTimeMillis());
 
         //Insert the row
@@ -70,7 +72,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = db.query(Constants.TABLE_NAME, new String[]{Constants.KEY_ID,
-                        Constants.KEY_GROCERY_ITEM, Constants.KEY_QTY_NUMBER, Constants.KEY_DATE_NAME},
+                        Constants.KEY_GROCERY_ITEM, Constants.KEY_QTY_NUMBER, Constants.KEY_IMAGEN, Constants.KEY_DATE_NAME},
                 Constants.KEY_ID + "=?",
                 new String[]{String.valueOf(id)}, null, null, null, null);
 
@@ -82,6 +84,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         grocery.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(Constants.KEY_ID))));
         grocery.setName(cursor.getString(cursor.getColumnIndex(Constants.KEY_GROCERY_ITEM)));
         grocery.setQuantity(cursor.getString(cursor.getColumnIndex(Constants.KEY_QTY_NUMBER)));
+        grocery.setQuantity(cursor.getString(cursor.getColumnIndex(Constants.KEY_IMAGEN)));
 
         //convert timestamp to something readable
         java.text.DateFormat dateFormat = java.text.DateFormat.getDateInstance();
@@ -103,6 +106,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         Cursor cursor = db.query(Constants.TABLE_NAME, new String[]{
                 Constants.KEY_ID, Constants.KEY_GROCERY_ITEM, Constants.KEY_QTY_NUMBER,
+                Constants.KEY_IMAGEN,
                 Constants.KEY_DATE_NAME}, null, null, null, null, Constants.KEY_DATE_NAME + " DESC");
 
         if (cursor.moveToFirst()) {
@@ -111,6 +115,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 grocery.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(Constants.KEY_ID))));
                 grocery.setName(cursor.getString(cursor.getColumnIndex(Constants.KEY_GROCERY_ITEM)));
                 grocery.setQuantity(cursor.getString(cursor.getColumnIndex(Constants.KEY_QTY_NUMBER)));
+                grocery.setImagen(cursor.getString(cursor.getColumnIndex(Constants.KEY_IMAGEN)));
 
                 //convert timestamp to something readable
                 java.text.DateFormat dateFormat = java.text.DateFormat.getDateInstance();
@@ -136,6 +141,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(Constants.KEY_GROCERY_ITEM, grocery.getName());
         values.put(Constants.KEY_QTY_NUMBER, grocery.getQuantity());
+        values.put(Constants.KEY_IMAGEN, grocery.getImagen());
         values.put(Constants.KEY_DATE_NAME, java.lang.System.currentTimeMillis());//get system time
 
 

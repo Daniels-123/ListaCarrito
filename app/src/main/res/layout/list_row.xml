@@ -36,10 +36,19 @@
                 android:textColor="@android:color/black" />
 
             <TextView
-                android:id="@+id/dateAdded"
+                android:id="@+id/imagenpop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/quantity"
+                android:paddingTop="5dp"
+                android:text="imgen"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/dateAdded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imagenpop"
                 android:paddingTop="5dp"
                 android:text="@string/date" />
 

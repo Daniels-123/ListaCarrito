@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private AlertDialog dialog;
     private EditText groceryItem;
     private EditText quantity;
+    private EditText image;
     private Button saveButton;
     private DatabaseHandler db;
 
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         View view = getLayoutInflater().inflate(R.layout.popup, null);
         groceryItem = (EditText) view.findViewById(R.id.groceryItem);
         quantity = (EditText) view.findViewById(R.id.groceryQty);
+        image = view.findViewById(R.id.groceryImage);
         saveButton = (Button) view.findViewById(R.id.saveButton);
 
         dialogBuilder.setView(view);
@@ -86,9 +88,10 @@ public class MainActivity extends AppCompatActivity {
 
         String newGrocery = groceryItem.getText().toString();
         String newGroceryQuantity = quantity.getText().toString();
-
+        String newImage = image.getText().toString();
         grocery.setName(newGrocery);
         grocery.setQuantity(newGroceryQuantity);
+        grocery.setImagen(newImage);
 
         //Save to DB
         db.addGrocery(grocery);

@@ -10,6 +10,7 @@ public class Constants {
     public static final String KEY_ID = "id";
     public static final String KEY_GROCERY_ITEM = "grocery_item";
     public static final String KEY_QTY_NUMBER = "quantity_number";
+    public static final String KEY_IMAGEN = "imagen";
     public static final String KEY_DATE_NAME = "date_added";
 
 

@@ -5,16 +5,18 @@ public class Grocery {
     private String name;
     private String quantity;
     private String dateItemAdded;
+    private String imagen;
     private int id;
 
     public Grocery() {
 
     }
 
-    public Grocery(String name, String quantity, String dateItemAdded, int id) {
+    public Grocery(String name, String quantity, String dateItemAdded, String imagen, int id) {
         this.name = name;
         this.quantity = quantity;
         this.dateItemAdded = dateItemAdded;
+        this.imagen = imagen;
         this.id = id;
     }
 
@@ -40,6 +42,14 @@ public class Grocery {
 
     public void setDateItemAdded(String dateItemAdded) {
         this.dateItemAdded = dateItemAdded;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public int getId() {

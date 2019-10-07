@@ -56,6 +56,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public TextView groceryItemName;
         public TextView quantity;
         public TextView dateAdded;
+        public TextView image;
         public Button editButton;
         public Button deleteButton;
         public int id;
@@ -69,6 +70,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             groceryItemName = (TextView) view.findViewById(R.id.name);
             quantity = (TextView) view.findViewById(R.id.quantity);
             dateAdded = (TextView) view.findViewById(R.id.dateAdded);
+            image = view.findViewById(R.id.imagenpop);
 
             editButton = (Button) view.findViewById(R.id.editButton);
             deleteButton = (Button) view.findViewById(R.id.deleteButton);
