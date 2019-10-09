@@ -1,8 +1,8 @@
-# GroceryList
-Grocery List application using Sqlite Database.
+# Lista de Deseos
+Aplicación Lista de compras utilizando la Base de datos Sqlite.
 
 Highlighted concept :
-- Sqlite Database
+- Base de datos SQLite
 - RecyclerView
 - AlertDialog
 - Activity Handling
